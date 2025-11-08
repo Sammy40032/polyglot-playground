@@ -1,0 +1,19 @@
+
+version: '3'
+services:
+  python:
+    build: ./python
+    ports:
+      - "5000:5000"
+  javascript:
+    build: ./javascript
+    ports:
+      - "5001:5001"
+  go:
+    build: ./go
+    ports:
+      - "5002:5002"
+  rust:
+    build: ./rust
+    ports:
+      - "5003:5003"
