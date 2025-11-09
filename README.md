@@ -1,99 +1,75 @@
 # Polyglot Playground
 
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
-![Contributions](https://img.shields.io/badge/contributions-welcome-orange)
 
 ## Overview
-Polyglot Playground is a multi-language project showcasing REST APIs in Python, JavaScript, Go, and Rust. Perfect for learning and comparing languages.
-
+Polyglot Playground is a multi-language project showcasing REST APIs in Python, JavaScript, Go, and Rust. You can use it to compare, and learn languages of these 4!
 ## Features
-- `/hello` endpoint returns a greeting.
-- `/fibonacci?n=10` returns Fibonacci sequence.
+Add these to end of the url:
+- `/hello` endpoint returns greeting with the name of the language.
+- `/fibonacci?n=10` returns Fibonacci sequence. (Replace the 10 with the number of your choice)
 
 ## Quick Start
+### Windows Users
+- Ensure Docker Desktop is installed and running.
+- Navigate to the project folder and run:
+```powershell
+docker compose up --build
+```
+To stop:
+```powershell
+docker compose down
+```
+If `make` is not available, skip it and use the above commands.
+
+### Linux/macOS
 ```bash
-git clone https://github.com/yourusername/polyglot-playground.git
-cd polyglot-playground
 make up
 ```
+To stop:
+```bash
+make down
+```
 
-Access APIs:
+## Endpoints
 - Python: http://localhost:5000/hello
 - JavaScript: http://localhost:5001/hello
 - Go: http://localhost:5002/hello
 - Rust: http://localhost:5003/hello
 
-For Fibonacci:
+Fibonacci example:
 ```
-http://localhost:5000/fibonacci?n=10
-http://localhost:5001/fibonacci?n=10
-http://localhost:5002/fibonacci?n=10
-http://localhost:5003/fibonacci?n=10
+http://localhost:5000/fibonacci?n=10 (PYTHON PORT)
 ```
 
-Stop services:
-```bash
-make down
+## Troubleshooting
+### Rust Installation
+1. Download Rust installer from https://rustup.rs
+2. Install and restart PowerShell.
+3. Verify installation:
+```powershell
+rustup --version
+cargo --version
+rustc --version
 ```
-
-### Run Individually Without Docker
-- **Python**
-```bash
-cd python
-pip install -r requirements.txt
-python app.py
-```
-- **JavaScript**
-```bash
-cd javascript
-npm install
-node app.js
-```
-- **Go**
-```bash
-cd go
-go run main.go
-```
-- **Rust**
-```bash
+4. Build locally (optional):
+```powershell
 cd rust
-cargo run
+cargo build
 ```
+This creates `Cargo.lock` and speeds up Docker builds.
 
-## GitHub Upload Guide
-1. Create `.gitignore`:
-```
-__pycache__/
-node_modules/
-target/
-bin/
-.DS_Store
-```
-2. Initialize Git:
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-```
-3. Push to GitHub:
-```bash
-git branch -M main
-git remote add origin https://github.com/yourusername/polyglot-playground.git
-git push -u origin main
-```
-
-## Release Instructions
-- Tag version: `v1.0.0`
-- Title: `Polyglot Playground v1.0.0`
-- Description:
-```
-Initial release of Polyglot Playground:
-- Multi-language REST APIs (Python, JavaScript, Go, Rust)
-- Docker Compose setup
-- Makefile for easy commands
-- README with instructions
-```
+### Python Instalation
+1. Download Python Installer from https://www.python.org/downloads/
+2. Restart Powershell
+3. Verify Installation:
+'''powershell
+python --version
+'''
+### Docker Desktop Tips
+- **View in Docker Desktop**: See containers visually.
+- **View Config**: Inspect Compose configuration.
+- **Enable Watch**: Auto-rebuild on file changes.
 Attach ZIP file and publish.
 
 ## License
