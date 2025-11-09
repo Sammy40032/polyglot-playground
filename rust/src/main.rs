@@ -1,6 +1,8 @@
-
+use actix_web::web::Json;
 use actix_web::{web, App, HttpServer, Responder};
 use chrono::Utc;
+use serde::Serialize;
+
 
 async fn hello() -> impl Responder {
     web::Json(serde_json::json!({"message": "Hello from Rust!"}))
