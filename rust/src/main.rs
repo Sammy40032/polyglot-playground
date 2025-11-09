@@ -1,8 +1,18 @@
 
 use actix_web::{web, App, HttpServer, Responder};
+use chrono::Utc;
 
 async fn hello() -> impl Responder {
     web::Json(serde_json::json!({"message": "Hello from Rust!"}))
+}
+
+struct TimeResponse {
+    current_time: String,
+}
+
+async fn time() -> Json<TimeResponse> {
+    let now = Utc::now().to_rfc3339();
+    Json(TimeResponse { current_time: now })
 }
 
 async fn fibonacci(info: web::Query<std::collections::HashMap<String, String>>) -> impl Responder {
@@ -24,6 +34,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .route("/hello", web::get().to(hello))
             .route("/fibonacci", web::get().to(fibonacci))
+            .route("/time", web::get().to(time))
     })
     .bind(("0.0.0.0", 5003))?
     .run()

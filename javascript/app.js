@@ -1,3 +1,4 @@
+import express from "express";
 
 const express = require('express');
 const app = express();
@@ -5,6 +6,11 @@ const port = 5001;
 
 app.get('/hello', (req, res) => {
     res.json({ message: 'Hello from JavaScript!' });
+});
+
+app.get("/time", (req, res) => {
+  const now = new Date().toISOString(); // UTC time in ISO format
+  res.json({ current_time: now });
 });
 
 app.get('/fibonacci', (req, res) => {

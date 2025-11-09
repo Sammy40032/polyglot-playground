@@ -1,5 +1,6 @@
 
 from flask import Flask, jsonify, request
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -16,6 +17,11 @@ def fibonacci():
         seq.append(a)
         a, b = b, a + b
     return jsonify(sequence=seq)
+
+@app.route('/time', methods=['GET'])
+def time():
+    now = datetime.utcnow().isoformat() + "Z"
+    return jsonify(current_time=now)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
