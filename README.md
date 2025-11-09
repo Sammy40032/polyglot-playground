@@ -1,15 +1,14 @@
 # Polyglot Playground
 
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
-![Contributions](https://img.shields.io/badge/contributions-welcome-orange)
 
 ## Overview
 Polyglot Playground is a multi-language project showcasing REST APIs in Python, JavaScript, Go, and Rust. Perfect for learning and comparing languages.
-
 ## Features
+Add these to end of the url:
 - `/hello` endpoint returns a greeting.
 - `/fibonacci?n=10` returns Fibonacci sequence.
+
 
 ## Quick Start
 ### Windows Users
