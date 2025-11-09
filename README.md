@@ -12,54 +12,67 @@ Polyglot Playground is a multi-language project showcasing REST APIs in Python, 
 - `/fibonacci?n=10` returns Fibonacci sequence.
 
 ## Quick Start
+### Windows Users
+- Ensure Docker Desktop is installed and running.
+- Navigate to the project folder and run:
+```powershell
+docker compose up --build
+```
+To stop:
+```powershell
+docker compose down
+```
+If `make` is not available, skip it and use the above commands.
+
+### Linux/macOS
 ```bash
-git clone https://github.com/yourusername/polyglot-playground.git
-cd polyglot-playground
 make up
 ```
+To stop:
+```bash
+make down
+```
 
-Access APIs:
+## Endpoints
 - Python: http://localhost:5000/hello
 - JavaScript: http://localhost:5001/hello
 - Go: http://localhost:5002/hello
 - Rust: http://localhost:5003/hello
 
-For Fibonacci:
+Fibonacci example:
 ```
 http://localhost:5000/fibonacci?n=10
-http://localhost:5001/fibonacci?n=10
-http://localhost:5002/fibonacci?n=10
-http://localhost:5003/fibonacci?n=10
 ```
 
-Stop services:
-```bash
-make down
+## Troubleshooting
+### Rust Installation (Optional but Recommended)
+If you want to build Rust locally or check Cargo version:
+1. Download Rust installer from https://rustup.rs
+2. Install and restart PowerShell.
+3. Verify installation:
+```powershell
+rustup --version
+cargo --version
+rustc --version
 ```
-
-### Run Individually Without Docker
-- **Python**
-```bash
-cd python
-pip install -r requirements.txt
-python app.py
-```
-- **JavaScript**
-```bash
-cd javascript
-npm install
-node app.js
-```
-- **Go**
-```bash
-cd go
-go run main.go
-```
-- **Rust**
-```bash
+4. Build locally (optional):
+```powershell
 cd rust
-cargo run
+cargo build
 ```
+This creates `Cargo.lock` and speeds up Docker builds.
+
+### Go Troubleshooting
+Ensure `go.mod` exists (included in this project). If missing, create:
+```
+module polyglot-playground-go
+go 1.21
+```
+
+### Docker Desktop Tips
+- **View in Docker Desktop**: See containers visually.
+- **View Config**: Inspect Compose configuration.
+- **Enable Watch**: Auto-rebuild on file changes.
 
 ## GitHub Upload Guide
 1. Create `.gitignore`:
