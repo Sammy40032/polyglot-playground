@@ -1,15 +1,15 @@
-use actix_web::web::Json;
 use actix_web::{web, App, HttpServer, Responder};
+use actix_web::web::Json;
 use chrono::Utc;
 use serde::Serialize;
 
+#[derive(Serialize)]
+struct TimeResponse {
+    current_time: String,
+}
 
 async fn hello() -> impl Responder {
     web::Json(serde_json::json!({"message": "Hello from Rust!"}))
-}
-
-struct TimeResponse {
-    current_time: String,
 }
 
 async fn time() -> Json<TimeResponse> {
