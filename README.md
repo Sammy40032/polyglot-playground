@@ -3,12 +3,11 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 ## Overview
-Polyglot Playground is a multi-language project showcasing REST APIs in Python, JavaScript, Go, and Rust. Perfect for learning and comparing languages.
+Polyglot Playground is a multi-language project showcasing REST APIs in Python, JavaScript, Go, and Rust. You can use it to compare, and learn languages of these 4!
 ## Features
 Add these to end of the url:
-- `/hello` endpoint returns a greeting.
-- `/fibonacci?n=10` returns Fibonacci sequence.
-
+- `/hello` endpoint returns greeting with the name of the language.
+- `/fibonacci?n=10` returns Fibonacci sequence. (Replace the 10 with the number of your choice)
 
 ## Quick Start
 ### Windows Users
@@ -40,12 +39,11 @@ make down
 
 Fibonacci example:
 ```
-http://localhost:5000/fibonacci?n=10
+http://localhost:5000/fibonacci?n=10 (PYTHON PORT)
 ```
 
 ## Troubleshooting
-### Rust Installation (Optional but Recommended)
-If you want to build Rust locally or check Cargo version:
+### Rust Installation
 1. Download Rust installer from https://rustup.rs
 2. Install and restart PowerShell.
 3. Verify installation:
@@ -61,51 +59,17 @@ cargo build
 ```
 This creates `Cargo.lock` and speeds up Docker builds.
 
-### Go Troubleshooting
-Ensure `go.mod` exists (included in this project). If missing, create:
-```
-module polyglot-playground-go
-go 1.21
-```
-
+### Python Instalation
+1. Download Python Installer from https://www.python.org/downloads/
+2. Restart Powershell
+3. Verify Installation:
+'''powershell
+python --version
+'''
 ### Docker Desktop Tips
 - **View in Docker Desktop**: See containers visually.
 - **View Config**: Inspect Compose configuration.
 - **Enable Watch**: Auto-rebuild on file changes.
-
-## GitHub Upload Guide
-1. Create `.gitignore`:
-```
-__pycache__/
-node_modules/
-target/
-bin/
-.DS_Store
-```
-2. Initialize Git:
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-```
-3. Push to GitHub:
-```bash
-git branch -M main
-git remote add origin https://github.com/yourusername/polyglot-playground.git
-git push -u origin main
-```
-
-## Release Instructions
-- Tag version: `v1.0.0`
-- Title: `Polyglot Playground v1.0.0`
-- Description:
-```
-Initial release of Polyglot Playground:
-- Multi-language REST APIs (Python, JavaScript, Go, Rust)
-- Docker Compose setup
-- Makefile for easy commands
-- README with instructions
-```
 Attach ZIP file and publish.
 
 ## License
